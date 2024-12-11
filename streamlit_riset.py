@@ -45,7 +45,7 @@ if selected2 == 'Implementasi':
     jenis_kelamin_mapping = {'L': 0, 'P': 1}
     diagnosis_mapping = {'DD': 0, 'DBD': 1, 'DSS': 2}
 
-    gender_encoded = gender_mapping[jenis_kelamin]
+    jenis_kelamin_encoded = jenis_kelamin_mapping[jenis_kelamin]
     diagnosis_encoded = diagnosis_mapping[diagnosis]
 
     # Membuat tombol untuk prediksi
