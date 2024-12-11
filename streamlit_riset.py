@@ -39,10 +39,10 @@ if selected2 == 'Implementasi':
     with col2:
         hb = st.number_input('Hemoglobin (HB g/dL)', min_value=0.0, max_value=30.0)
         jenis_kelamin = st.selectbox('Jenis Kelamin', ['Laki-laki', 'Perempuan'])
-        diagnosis = st.selectbox('Diagnosis Pasien', ['DBD', 'DBD', 'DSS'])
+        diagnosis = st.selectbox('Diagnosis Pasien', ['DD', 'DBD', 'DSS'])
 
     # Encoding gender dan diagnosis
-    jenis_kelamin_mapping = {'L': 0, 'P': 1}
+    jenis_kelamin_mapping = {'Laki-laki': 0, 'Perempuan': 1}
     diagnosis_mapping = {'DD': 0, 'DBD': 1, 'DSS': 2}
 
     jenis_kelamin_encoded = jenis_kelamin_mapping[jenis_kelamin]
