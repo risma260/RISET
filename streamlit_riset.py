@@ -3,6 +3,10 @@ import pandas as pd
 import pickle
 from streamlit_option_menu import option_menu
 
+
+# Judul web
+    st.title('Aplikasi Prediksi Lama Rawat Inap Pasien Demam Berdarah')
+
 #navigasi sidebar
 # horizontal menu
 selected2 = option_menu(None, ["Data", "Implementasi"], 
@@ -25,8 +29,6 @@ if selected2 == 'Implementasi':
     # Membaca model
     dbd_model = pickle.load(open('xgboost_model.pkl', 'rb'))
 
-    # Judul web
-    st.title('Aplikasi Prediksi Lama Rawat Inap Pasien Demam Berdarah')
 
     # Membagi kolom untuk input
     col1, col2 = st.columns(2)
@@ -55,5 +57,5 @@ if selected2 == 'Implementasi':
 
         # Menampilkan hasil prediksi
         st.subheader('Hasil Prediksi')
-        st.write(f"Perkiraan lama rawat inap: {prediksi_lama_rawat[0]:.2f} hari")
+        st.write(f"Perkiraan lama rawat inap: {round(prediksi_lama_rawat[0])} hari")
         
