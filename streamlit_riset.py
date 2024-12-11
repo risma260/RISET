@@ -32,26 +32,26 @@ if selected2 == 'Implementasi':
     col1, col2 = st.columns(2)
 
     with col1:
-        umur = st.number_input('Umur (tahun)', min_value=0, max_value=120, value=25)
-        trombosit = st.number_input('Jumlah Trombosit (x10^3/μL)', min_value=0, value=150)
-        hct = st.number_input('Hematokrit (HCT %)', min_value=0.0, max_value=100.0, value=45.0)
+        umur = st.number_input('Umur (tahun)', min_value=0, max_value=120)
+        trombosit = st.number_input('Jumlah Trombosit (x10^3/μL)', min_value=0)
+        hct = st.number_input('Hematokrit (HCT %)', min_value=0.0, max_value=100.0)
 
     with col2:
-        hb = st.number_input('Hemoglobin (HB g/dL)', min_value=0.0, max_value=30.0, value=13.5)
-        gender = st.selectbox('Jenis Kelamin', ['Laki-laki', 'Perempuan'])
-        diagnosis = st.selectbox('Diagnosis Pasien', ['Dengue Fever', 'Dengue Hemorrhagic Fever', 'Dengue Shock Syndrome'])
+        hb = st.number_input('Hemoglobin (HB g/dL)', min_value=0.0, max_value=30.0)
+        jenis_kelamin = st.selectbox('Jenis Kelamin', ['Laki-laki', 'Perempuan'])
+        diagnosis = st.selectbox('Diagnosis Pasien', ['DBD', 'DBD', 'DSS'])
 
     # Encoding gender dan diagnosis
-    gender_mapping = {'L': 0, 'P': 1}
+    jenis_kelamin_mapping = {'L': 0, 'P': 1}
     diagnosis_mapping = {'DD': 0, 'DBD': 1, 'DSS': 2}
 
-    gender_encoded = gender_mapping[gender]
+    gender_encoded = gender_mapping[jenis_kelamin]
     diagnosis_encoded = diagnosis_mapping[diagnosis]
 
     # Membuat tombol untuk prediksi
     if st.button('Prediksi Lama Rawat Inap'):
         # Prediksi dengan model
-        prediksi_lama_rawat = dbd_model.predict([[umur, trombosit, hct, hb, gender_encoded, diagnosis_encoded]])
+        prediksi_lama_rawat = dbd_model.predict([[umur, trombosit, hct, hb, jenis_kelamin_encoded, diagnosis_encoded]])
 
         # Menampilkan hasil prediksi
         st.subheader('Hasil Prediksi')
