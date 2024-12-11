@@ -5,7 +5,7 @@ from streamlit_option_menu import option_menu
 
 
 # Judul web
-    st.title('Aplikasi Prediksi Lama Rawat Inap Pasien Demam Berdarah')
+st.title('Aplikasi Prediksi Lama Rawat Inap Pasien Demam Berdarah')
 
 #navigasi sidebar
 # horizontal menu
