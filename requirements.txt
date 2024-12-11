@@ -1,0 +1,12 @@
+streamlit
+numpy
+scikit-learn==1.2.2
+pandas
+joblib
+seaborn
+matplotlib
+plotly
+Pillow
+streamlit-option-menu
+librosa
+pycaret==3.1.0
