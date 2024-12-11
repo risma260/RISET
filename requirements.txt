@@ -10,8 +10,6 @@ matplotlib
 plotly
 Pillow
 streamlit-option-menu
-librosa
-pycaret==3.1.0
 xgboost
 setuptools
 
