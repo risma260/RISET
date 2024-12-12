@@ -9,17 +9,24 @@ st.title('Aplikasi Prediksi Lama Rawat Inap Pasien Demam Berdarah')
 
 #navigasi sidebar
 # horizontal menu
-selected2 = option_menu(None, ["Data", "Implementasi"], 
-    icons=['house', 'gear'], 
+selected2 = option_menu(None, ["Data", "Preprocessing", "Implementasi"], 
+    icons=['house', 'filter', 'gear'], 
     menu_icon="cast", default_index=0, orientation="horizontal")
 
 #halaman Data
 if (selected2 == 'Data') :
-    st.title('deskripsi data')
+    st.title('Deskripsi Data')
 
-    st.write("Data ini berisi 6 kolom hasil diagnosis pasien yang digunakan untuk memprediksi lama rawat inap pasien demam berdarah")
+    st.write("Data yang digunakan berisi 6 kolom yang digunakan untuk memprediksi LOS (Length Of Stay) / lama rawat inap pasien demam berdarah")
     data = pd.read_csv('https://raw.githubusercontent.com/risma260/RISET/refs/heads/main/dataset.csv', sep=';')
     st.write(data)
+
+if (selected2 == 'Preprocessing') :
+    st. title('Preprocessing Data')
+
+    st.write("Data di proses dahulu sebelum dimasukkan ke model, yaitu mengubah nilai kategori menjadi nilai numerik dan mengisi nilai yang hilang menggunakan KNN Imputation")
+    data2 = pd.read_csv('https://raw.githubusercontent.com/risma260/RISET/refs/heads/main/dataset_preprocessing.csv', sep=';')
+    st.write(data2)
 
          
 # Halaman Implementasi
