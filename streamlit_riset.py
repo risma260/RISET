@@ -15,17 +15,17 @@ selected2 = option_menu(None, ["Data", "Preprocessing", "Implementasi"],
 
 #halaman Data
 if (selected2 == 'Data') :
-    st.title('Deskripsi Data')
+    st.header('Deskripsi Data')
 
     st.write("Data yang digunakan berisi 6 kolom yang digunakan untuk memprediksi LOS (Length Of Stay) / lama rawat inap pasien demam berdarah")
     data = pd.read_csv('https://raw.githubusercontent.com/risma260/RISET/refs/heads/main/dataset.csv', sep=';')
     st.write(data)
 
 if (selected2 == 'Preprocessing') :
-    st. title('Preprocessing Data')
+    st.subheader('Preprocessing Data')
 
     st.write("Data di proses dahulu sebelum dimasukkan ke model, yaitu mengubah nilai kategori menjadi nilai numerik dan mengisi nilai yang hilang menggunakan KNN Imputation")
-    data2 = pd.read_csv('https://raw.githubusercontent.com/risma260/RISET/refs/heads/main/dataset_preprocessing.csv', sep=';')
+    data2 = pd.read_csv('https://raw.githubusercontent.com/risma260/RISET/refs/heads/main/dataset_preprocessing.csv', sep=',')
     st.write(data2)
 
          
