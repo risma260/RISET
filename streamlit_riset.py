@@ -15,7 +15,7 @@ selected2 = option_menu(None, ["Data", "Preprocessing", "Implementasi"],
 
 #halaman Data
 if (selected2 == 'Data') :
-    st.header('Deskripsi Data')
+    st.subheader('Deskripsi Data')
 
     st.write("Data yang digunakan berisi 6 kolom yang digunakan untuk memprediksi LOS (Length Of Stay) / lama rawat inap pasien demam berdarah")
     data = pd.read_csv('https://raw.githubusercontent.com/risma260/RISET/refs/heads/main/dataset.csv', sep=';')
@@ -31,7 +31,7 @@ if (selected2 == 'Preprocessing') :
          
 # Halaman Implementasi
 if selected2 == 'Implementasi':
-    st.title('Implementasi')
+    st.subheader('Implementasi')
 
     # Membaca model
     dbd_model = pickle.load(open('xgboost_model.pkl', 'rb'))
@@ -41,14 +41,14 @@ if selected2 == 'Implementasi':
     col1, col2 = st.columns(2)
 
     with col1:
-        umur = st.number_input('Umur (tahun)', min_value=0, max_value=120)
+        umur = st.number_input('Umur (tahun)', min_value=0)
         trombosit = st.number_input('Jumlah Trombosit (x10^3/μL)', min_value=0)
-        hct = st.number_input('Hematokrit (HCT %)', min_value=0.0, max_value=100.0)
+        hct = st.number_input('Hematokrit (HCT %)', min_value=0)
 
     with col2:
-        hb = st.number_input('Hemoglobin (HB g/dL)', min_value=0.0, max_value=30.0)
+        hb = st.number_input('Hemoglobin (HB g/dL)', min_value=0)
         jenis_kelamin = st.selectbox('Jenis Kelamin', ['Laki-laki', 'Perempuan'])
-        diagnosis = st.selectbox('Diagnosis Pasien', ['DD', 'DBD', 'DSS'])
+        diagnosis = st.selectbox('Jenis Demam', ['DD', 'DBD', 'DSS'])
 
     # Encoding gender dan diagnosis
     jenis_kelamin_mapping = {'Laki-laki': 0, 'Perempuan': 1}
