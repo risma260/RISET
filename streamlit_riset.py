@@ -46,10 +46,10 @@ if selected2 == 'Implementasi':
     with col1:
         umur = st.number_input('Umur (tahun)', min_value=0)
         trombosit = st.number_input('Jumlah Trombosit (x10^3/μL)', min_value=0)
-        hct = st.number_input('Hematokrit (HCT %)', min_value=0)
+        hct = st.number_input('Hematokrit (HCT %)', min_value=0.0, step=0.1)
 
     with col2:
-        hb = st.number_input('Hemoglobin (HB g/dL)', min_value=0)
+        hb = st.number_input('Hemoglobin (HB g/dL)', min_value=0.0, step=0.1)
         jenis_kelamin = st.selectbox('Jenis Kelamin', ['Laki-laki', 'Perempuan'])
         diagnosis = st.selectbox('Jenis Demam', ['DD', 'DBD', 'DSS'])
 
