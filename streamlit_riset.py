@@ -37,7 +37,7 @@ if selected2 == 'Implementasi':
     st.subheader('Implementasi')
 
     # Membaca model
-    dbd_model = pickle.load(open('xgboost_model.pkl', 'rb'))
+    dbd_model = pickle.load(open('model_xgboost.pkl', 'rb'))
 
 
     # Membagi kolom untuk input
